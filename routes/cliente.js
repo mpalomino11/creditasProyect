@@ -1,6 +1,7 @@
 const {Router} =require('express');
 const { check } = require('express-validator');
-const { createCliente,getCliente ,createAuto} = require('../controllers/cliente');
+const { createCliente,getCliente } = require('../controllers/cliente');
+const { createAuto ,getAtuo} = require('../controllers/autos');
 const { validarCampos } = require('../middlewares/validar-campos');
 
 const router =Router();
@@ -16,6 +17,9 @@ router.post('/user',[
     check('domicilio','es necesario un domicilio').not().isEmpty(),
     validarCampos
 ], createCliente)
+
+///// obtener todo los autos
+router.get('/auto',getAtuo)
 
 router.post('/auto',[
     check('modelo','El modelo es obligatorio ').not().isEmpty(),

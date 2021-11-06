@@ -53,14 +53,9 @@ const createCliente= async(req,res=response)=>{
 
 }
 
-const createAuto = async(req,res=response)=>{
-    res.status(200).json({
-        msg:"creado Auto"
-    })
-}
+
 
 module.exports={
     createCliente,
     getCliente,
-    createAuto
 }
